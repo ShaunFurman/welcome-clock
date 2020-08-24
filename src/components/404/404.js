@@ -1,6 +1,6 @@
 import React from 'react';
 
-function noMatch(props){
+function NoMatch(props){
     return (
     <div className="404">
         404 Page not available!
@@ -9,4 +9,4 @@ function noMatch(props){
 }
 
 
-export default noFo
+export default NoMatch

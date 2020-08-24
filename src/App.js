@@ -1,20 +1,21 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom'; 
 
-
-import './App.css';
+// import './App.css';
 
 import Welcome from './components/welcome/Welcome';
 import Clock from './components/clock/Clock';
 import Contact from './components/contact/Contact';
 import Navigation from './components/navigation/Navigation';
-import noFo from './components/404/404'; 
+import NoMatch from './components/404/404'; 
+
 
 function App() {
   return (
     <div className="App">
             
     <Navigation />
+    <Switch>
       <Route 
       path="/welcome/:name" 
      
@@ -22,16 +23,17 @@ function App() {
       />
       <Route
           exact
-          path="/welcome"
+          path="/"
           render={(props) => <Welcome {...props} name="Haus" />}
-        />
-      <Route path="/clock" component={Clock} />
+       />
+      <Route path="/clock" component={Clock}
+       />
       <Route path="/contact" component={Contact} />
-      <Route
-        path="/" component={noFo} />
+      
+     <Route  component={NoMatch} />
       
       
-      
+      </Switch>
       
    
     </div>
